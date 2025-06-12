@@ -21,11 +21,13 @@ public class ManipulaSenha {
         }else if (selecao == 4){
             apenasNumerosLetras(min);
         }else if (selecao == 5){
-            apenasLetrasCaracteresEspeciais(min);
+            apenasNumerosCaracteresEspeciais(min);
         }else if (selecao == 6){
+            apenasLetrasCaracteresEspeciais(min);
+        }else if (selecao == 7){
             numerosLetrasCaracteresEspeciais(min);
         }else {
-            System.out.println("ERRO - USUÁRIO BURRO - SELEÇÃO INVÁLIDA");
+            System.out.println("ERRO - SELEÇÃO INVÁLIDA");
         }
     }
 
