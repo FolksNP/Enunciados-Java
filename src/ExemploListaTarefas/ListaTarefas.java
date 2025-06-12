@@ -7,6 +7,7 @@ public class ListaTarefas {
 
     Scanner sc = new Scanner(System.in);
     ArrayList<Tarefa> tarefas = new ArrayList<>();
+    String [] tags = new String[10];
 
     public void adicionarTarefa(){
         System.out.print("Digite o titulo da tarefa: ");
@@ -23,7 +24,44 @@ public class ListaTarefas {
         }else{
             idAntecedente = Integer.MIN_VALUE;
         }
-        tarefas.add(new Tarefa(titulo, descricao, dependencia, idAntecedente));
+        String [] addTags = adicionarTags();
+        tarefas.add(new Tarefa(titulo, descricao, dependencia, idAntecedente, addTags));
+    }
+
+    public void criarTags() {
+        for (int i = 0; i < tags.length; i++) {
+            System.out.print("Digite a tag (ou pressione ENTER para parar): ");
+            String tag = sc.nextLine();
+            if (tag.isEmpty()) {
+                break;
+            }
+            tags[i] = tag;
+        }
+    }
+
+    public String[] adicionarTags() {
+        System.out.println("Tags disponíveis:");
+        for (int i = 0; i < tags.length; i++) {
+            if (tags[i] != null) {
+                System.out.printf("%d - %s\n", i, tags[i]);
+            }
+        }
+        System.out.println("Selecione no máximo 5 tags pelo índice (digite -1 para parar):");
+        ArrayList<String> tagsSelecionadas = new ArrayList<>();
+        while (tagsSelecionadas.size() < 5) {
+            System.out.print("Digite o índice da tag: ");
+            int index = sc.nextInt();
+            sc.nextLine();
+            if (index == -1) {
+                break;
+            }
+            if (index >= 0 && index < tags.length && tags[index] != null) {
+                tagsSelecionadas.add(tags[index]);
+            } else {
+                System.out.println("Índice inválido ou tag inexistente.");
+            }
+        }
+        return tagsSelecionadas.toArray(new String[0]);
     }
 
     public void concluirTarefa(){
