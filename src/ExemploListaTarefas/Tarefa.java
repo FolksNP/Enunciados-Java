@@ -1,7 +1,5 @@
 package ExemploListaTarefas;
 
-import java.util.List;
-
 public class Tarefa {
 
     private String titulo;
@@ -17,7 +15,7 @@ public class Tarefa {
         this.situacao = Boolean.FALSE;
         this.dependeDeOutraTarefa = dependeDeOutraTarefa;
         this.idTarefaAntecedente = idTarefaAntecedente;
-        tags = addTags.clone();
+        this.tags = addTags.clone();
     }
 
     public void setTitulo(String titulo) {

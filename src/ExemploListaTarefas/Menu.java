@@ -9,6 +9,7 @@ public class Menu {
         System.out.println("2 - Terminar Tarefa");
         System.out.println("3 - Listar Tarefas");
         System.out.println("4 - Procurar Tarefa");
+        System.out.println("5 - Criar Tags");
         System.out.println("0 - Sair");
     }
 

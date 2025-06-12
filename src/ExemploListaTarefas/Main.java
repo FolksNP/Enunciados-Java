@@ -25,6 +25,9 @@ public class Main {
                 case 4:
                     listaTarefas.busca();
                     break;
+                case 5:
+                    listaTarefas.criarTags();
+                    break;
                 case 0:
                     continua = 0;
                     System.out.println("Encerrando... ");
